@@ -20,7 +20,7 @@ public class Refund extends Response {
         super(resp);
 
         JSONObject payload = ((JSONObject) resp.opt("payload"));
-        if (payload.length() > 0) {
+        if (payload != null) {
             this.approval = getValue(payload.opt("approval"));
             this.authorizator = getValue(payload.opt("authorizator"));
             this.cardTrade = getValue(payload.opt("card_trade"));
